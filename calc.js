@@ -34,7 +34,7 @@ function operate(operator, num1, num2) {
 const buttons = document.querySelector(".buttons");
 /*Function was originally used for my etch a sketch site to generate the tiles.  I'm reusing it to
 save time making my calculator instead of manually making each div and button.*/
-function buttonGenerator(rows, cols) {
+/*function buttonGenerator(rows, cols) {
     buttons.style.setProperty('--grid-rows', rows);
     buttons.style.setProperty('--grid-cols', cols);
     for (c = 0; c < (rows * cols); c++) {
@@ -42,7 +42,7 @@ function buttonGenerator(rows, cols) {
       let cell = document.createElement("div");
       cell.setAttribute('id',c);
       cell.innerText = (c);
-      /*cell.addEventListener('mouseover',colorUpdater);*/
+      /*cell.addEventListener('mouseover',colorUpdater);
       buttons.appendChild(cell).className = "grid-item";
     };
   };
@@ -68,6 +68,6 @@ document.getElementById('3').innerHTML = 'Clear';
 document.getElementById('0').innerHTML = '';
 document.getElementById('1').innerHTML = '';
 document.getElementById('2').innerHTML = '';
-
+*/
 
   
