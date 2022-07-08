@@ -85,8 +85,15 @@ function setDisplay(text) {
     display.innerHTML = displayValue;
 }
 function addDisplay(){
-    if(buttonPress == '+' || buttonPress == '-' || buttonPress == '*' || buttonPress == '/') {
-        for(let i=0; i<displayValue.length; i++) {
+        if(buttonPress == '+' || buttonPress == '-' || buttonPress == '*' || buttonPress == '/'){
+            if(buttonPress == '-' && num2.length == 0) {
+                displayValue+=buttonPress;
+                display.innerHTML = displayValue;
+                num2+=buttonPress;
+                operatorType = displayValue.charAt(displayValue.length-2);
+                return;
+            }
+        for(let i=1; i<displayValue.length; i++) {
             if(displayValue.charAt(i) == '+' || displayValue.charAt(i) == '-' || displayValue.charAt(i) == '*' || displayValue.charAt(i) == '/') {
                 operatorType2 = operatorType;
                 operatorType = displayValue.charAt(i);
@@ -122,7 +129,7 @@ document.getElementById('*').addEventListener('click', function() {buttonPress =
 document.getElementById('1').addEventListener('click', function() {buttonPress = "1";addDisplay()});
 document.getElementById('2').addEventListener('click', function() {buttonPress = "2";addDisplay()});
 document.getElementById('3').addEventListener('click', function() {buttonPress = "3";addDisplay()});
-document.getElementById('-').addEventListener('click', function() {buttonPress = "-";operatorType='-';  addDisplay()});
+document.getElementById('-').addEventListener('click', function() {buttonPress = "-";operatorType = '-';  addDisplay()});
 document.getElementById('.').addEventListener('click', function() {buttonPress = ".";addDisplay()});
 document.getElementById('0').addEventListener('click', function() {buttonPress = "0";addDisplay()});
 document.getElementById('=').addEventListener('click', function() {buttonPress = "="; operate();});
