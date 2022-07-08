@@ -50,6 +50,20 @@
     align-items: center;
     justify-content: center;
   }
+  #clear {
+    display: grid;
+    width:288px;
+    height:60px;
+    aspect-ratio:1;
+    max-width:300px;
+    max-height:300px;
+    margin:5px;
+    background-color:rgb(167, 167, 167);
+    border:black;
+    border-style: solid;
+    align-items: center;
+    justify-content: center;
+  }
   
   .row1, .row2, .row3, .row4, .row5{
     display:flex;
