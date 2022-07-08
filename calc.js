@@ -50,28 +50,32 @@ function operate2() {
     if(operatorType == '+') {
         add(number1, number2);
         num1 = display.innerHTML;
-        displayValue += operatorType2;
+        operatorType = operatorType2;
+        displayValue += operatorType;
         display.innerHTML = displayValue;
         num2 = '';
     }
     else if(operatorType == '-') {
         subtract(number1, number2);
         num1 = display.innerHTML;
-        displayValue += operatorType2;
+        operatorType = operatorType2;
+        displayValue += operatorType;
         display.innerHTML = displayValue;
         num2 = '';
     }
     else if (operatorType == '*') {
         multiply(number1, number2);
         num1 = display.innerHTML;
-        displayValue += operatorType2;
+        operatorType = operatorType2;
+        displayValue += operatorType;
         display.innerHTML = displayValue;
         num2 = '';
     }
     else if(operatorType == '/') {
         divide(number1, number2);
         num1 = display.innerHTML;
-        displayValue += operatorType2;
+        operatorType = operatorType2;
+        displayValue += operatorType;
         display.innerHTML = displayValue;
         num2 = '';
     }
@@ -93,6 +97,7 @@ function addDisplay(){
                 operatorType = displayValue.charAt(displayValue.length-2);
                 return;
             }
+            else {
         for(let i=1; i<displayValue.length; i++) {
             if(displayValue.charAt(i) == '+' || displayValue.charAt(i) == '-' || displayValue.charAt(i) == '*' || displayValue.charAt(i) == '/') {
                 operatorType2 = operatorType;
@@ -107,6 +112,7 @@ function addDisplay(){
         display.innerHTML = displayValue;
         return;
     }
+}
     displayValue+= buttonPress;
     num2+= buttonPress;
     display.innerHTML = displayValue;
